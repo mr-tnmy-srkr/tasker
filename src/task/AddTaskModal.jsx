@@ -11,13 +11,14 @@ export default function AddTaskModal({ onSave, taskToUpdate, onCloseClick }) {
       isFavorite: false,
     }
   );
-
+  // console.log(task);
   const [isAdd, setIsAdd] = useState(Object.is(taskToUpdate, null));
 
   const handleChange = (e) => {
-    e.preventDefault() 
+    e.preventDefault();
     const name = e.target.name;
     let value = e.target.value;
+ 
     if (name === "tags") {
       value = value.split(",");
     }
