@@ -4,6 +4,7 @@ import AddTaskModal from "./AddTaskModal";
 import SearchTask from "./SearchTask";
 import TaskActions from "./TaskActions";
 import TaskList from "./TaskList";
+import NoTasksFound from "./NoTasksFound";
 // import NoTasksFound from "./NoTasksFound";
 
 export default function TaskBoard() {
@@ -78,7 +79,7 @@ export default function TaskBoard() {
     const filtered = tasks.filter((task) =>
       task.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
+    // console.log(filtered);
     setTasks([...filtered]);
   }
 
@@ -114,7 +115,7 @@ export default function TaskBoard() {
               onFav={handleFavorite}
             />
           ) : (
-            ""
+            <NoTasksFound />
           )}
         </div>
       </div>
